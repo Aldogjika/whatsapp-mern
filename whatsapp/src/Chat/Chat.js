@@ -28,7 +28,7 @@ function Chat({ messages }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("/messages/new", {
+    await axios.post("api/messages/new", {
       name: "Aldo",
       message: message,
       timestamp: "Just now!",
