@@ -60,7 +60,7 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.get("/messages/sync", (req, res) => {
+app.get("api/messages/sync", (req, res) => {
   Messages.find((err, data) => {
     if (err) {
       res.send(err);
@@ -70,7 +70,7 @@ app.get("/messages/sync", (req, res) => {
   });
 });
 
-app.post("/messages/new", (req, res) => {
+app.post("api/messages/new", (req, res) => {
   const dbMessage = req.body;
 
   Messages.create(dbMessage, (err, data) => {
@@ -84,5 +84,5 @@ app.post("/messages/new", (req, res) => {
 
 // listen
 app.listen(port, () => {
-  //console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
